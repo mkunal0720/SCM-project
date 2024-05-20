@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidding System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #bid-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        #bid-container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #007BFF;
+            font-size: 24px;
+            margin-top: 0;
+            transition: color 0.3s;
+        }
+
+        #bid-container:hover h1 {
+            color: #0056b3;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #placeBidButton {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        #placeBidButton:hover {
+            background-color: #0056b3;
+        }
+
+        #highestBid {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        #timer {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        #priceTag {
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .bid-over-message {
+            color: #e74c3c;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bid-container">
+        <h1>Bidding System</h1>
+        
+        <p>Current Highest Bid: ₹<span id="currentBid">0</span></p>
+        <p>Your Bid: ₹<input type="number" id="yourBid" min="1"></p>
+        <p>Highest Bid: ₹<span id="highestBid">0</span></p>
+        <p>Time Left: <span id="timer">30</span> seconds</p>
+        <p id="priceTag">Item Price: ₹2500000</p>
+        <button id="placeBidButton">Place Bid</button>
+    </div>
+
+    <script>
+        let currentBid = 0;
+        let highestBid = 0;
+        let timeLeft = 30; // Initial time limit in seconds
+        let timerInterval;
+
+        // Item price in Indian Rupees
+        const itemPrice = 2500000;
+
+        const updateTimer = () => {
+            document.getElementById('timer').textContent = timeLeft;
+            timeLeft--;
+
+            if (timeLeft < 0) {
+                clearInterval(timerInterval);
+                document.getElementById('placeBidButton').disabled = true;
+                document.getElementById('bid-container').innerHTML += '<p class="bid-over-message">Bidding time is over and higgest bidder won this bid. <a href="payment.html">Proceed to payment</a>.</p>';
+            }
+        };
+
+        // Event listener for the "Place Bid" button
+        document.getElementById('placeBidButton').addEventListener('click', placeBid);
+
+        // Event listener for the "Enter" key press in the input field
+        document.getElementById('yourBid').addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                placeBid();
+            }
+        });
+
+        function placeBid() {
+            const yourBid = parseInt(document.getElementById('yourBid').value);
+
+            if (!isNaN(yourBid) && yourBid > currentBid && yourBid > itemPrice) {
+                currentBid = yourBid;
+                document.getElementById('currentBid').textContent = currentBid;
+
+                if (currentBid > highestBid) {
+                    highestBid = currentBid;
+                    document.getElementById('highestBid').textContent = highestBid;
+                }
+
+                alert(`You placed a bid of ₹${yourBid}.`);
+            } else {
+                alert('Invalid bid. Your bid must be higher than the item price.');
+            }
+
+            // Reset the timer
+            clearInterval(timerInterval);
+            timeLeft = 30;
+            updateTimer();
+            timerInterval = setInterval(updateTimer, 1000);
+
+            // Clear the input field
+            document.getElementById('yourBid').value = '';
+        }
+    </script>
+    <a href=""></a>
+</body>
+</html>
