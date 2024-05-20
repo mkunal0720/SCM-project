@@ -41,6 +41,11 @@ Welcome to the mesmerizing realm of the Vadickala, where each masterpiece invite
 | 4.     | Auction Page   | Menction about auctions                      | 7 May 2024  09:42 PM      | 8 May 2024 5:00 PM   | Kushal Bansal  |
 | 5.     | Home Page      | Solved some bugs in the Home page            | 8 May 2024 12:11 AM       | 9 May 2024 5:00 PM   | Kushal Bansal |
 | 6.     | Contact us Page | Solved some bugs in the Home page           | 16 May 2024 6:54 PM       | 17 May 2024 11:00 PM | Lakshay Sharma |
+| 7.     | Auction Organise  | solved some bugs in auction organise page | 16 May 2024 6:57 PM       | 17 May 2024 11:00 PM | Lakshay Sharma |
+| 8.     | Completed Auction | Completed Auction List                    | 20 May 2024 1:15 AM       | 20 May 2024 12:00 PM | Kunal Mittal |
+| 9.     | Canvas Coffers  | Completed Auction 2nd                       | 20 May 2024 10:33 AM      | 20 May 2024 12:00 PM | Lakshay Sharma|
+|10.     | upcoming       |upcoming auction                              |20 May 2024 11:06 AM       | 20 May 2024 12:00 PM | Kushal Bansal |
 
+ 
 
 
