@@ -45,6 +45,12 @@ Welcome to the mesmerizing realm of the Vadickala, where each masterpiece invite
 | 8.     | Completed Auction | Completed Auction List                    | 20 May 2024 1:15 AM       | 20 May 2024 12:00 PM | Kunal Mittal |
 | 9.     | Canvas Coffers  | Completed Auction 2nd                       | 20 May 2024 10:33 AM      | 20 May 2024 12:00 PM | Lakshay Sharma|
 |10.     | upcoming       |upcoming auction                              |20 May 2024 11:06 AM       | 20 May 2024 12:00 PM | Kushal Bansal |
+|11.     | Bidding system | bidding system                               | 20 May 2024 12:31 PM      | 20 May 2024 12:00 PM | Kunal Mittal  |
+|12.     | Bidding system | bidding system                               | 20 May 2024 12:57 PM      | 20 May 2024 12:00 PM | Lakshay Sharma|
+|13.     | Payment system | Payment system                               | 20 May 2024 01:52 PM      | 20 May 2024 12:00 PM | Kunal Mittal  |
+
+
+
 
  
 
